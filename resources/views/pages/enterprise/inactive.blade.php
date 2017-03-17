@@ -42,7 +42,7 @@
           Enterprises
      </legend>
 
-     <table class="table table-hover" id="enterprises">
+     <table class="table table-hover"  id="enterprises">
           <thead>
                <tr>
                     <th>#</th>
@@ -66,8 +66,7 @@
                     <td>{{ $enterprise->email }}</td>
                     <td>
                          <a href="{{ url('/enterprises/view', $enterprise->id) }}" class="text-highlight label label-info">View</a>
-                         <a href="{{ url('/enterprises/edit', $enterprise->id )}}" class="text-highlight label label-primary">Edit</a>
-                         <a onclick="deactivateEnterprise({{$enterprise->id}}, '{{ $enterprise->name }}')" class="text-highlight label label-danger">Deactivate</a>
+                         <a onclick="restoreEnterprise({{$enterprise->id}}, '{{ $enterprise->name }}')" class="text-highlight label label-success">Restore</a>
                     </td>
                </tr>
                @endforeach
@@ -75,5 +74,5 @@
      </table>
 </div>
 
-@include('pages.enterprise.deactivate')
+@include('pages.enterprise.restore')
 @endsection

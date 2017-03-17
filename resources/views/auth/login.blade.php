@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
+
 @section('content')
+<div class="top-right links">
+   @if (!Auth::check())
+       <a href="{{ url('/') }}">Home</a>
+   @endif
+</div>
+
 <div class="container">
      <div class="row">
           <div class="col-md-4 col-md-offset-4">
